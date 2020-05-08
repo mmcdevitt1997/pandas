@@ -26,3 +26,22 @@ df.iloc[2]
 df.loc['B', 'Y']
 
 df.loc[['A','B'], ['W','Y']]
+
+# conditional data frames
+booldf = df > 0
+# passing the boolin value into the dataframe
+df[booldf]
+# shorter way to write it
+df[df>0]
+# then just one column
+df['W']>0
+# return a row in the dataframe
+resultdf = df[df['Z']<0]
+# chaining everything together
+print(df[df['W']>0]['X'])
+# spilting up the steps
+boolser = df['W']>0
+result = df[boolser]
+mycols = ['Y','X']
+result[mycols]
+
