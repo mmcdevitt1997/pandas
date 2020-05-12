@@ -38,10 +38,21 @@ df['W']>0
 # return a row in the dataframe
 resultdf = df[df['Z']<0]
 # chaining everything together
-print(df[df['W']>0]['X'])
+df[df['W']>0]['X']
 # spilting up the steps
 boolser = df['W']>0
 result = df[boolser]
 mycols = ['Y','X']
 result[mycols]
 
+# need to use & for and
+df[(df['W']>0) & (df['Y'] > 1)]
+
+# reseting index
+df.reset_index()
+
+newind = 'CA NY WY OR OC'.split()
+
+df['States'] = newind
+
+df.set_index('States')
